@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="test.dao.MngSysLogMapper">
+    <resultMap id="BaseResultMap" type="test.model.MngSysLog">
+        <id column="LOG_ID" jdbcType="NUMERIC" property="logId"/>
+        <result column="USER_NAME" jdbcType="VARCHAR" property="userName"/>
+        <result column="OPERATE_TYPE" jdbcType="VARCHAR" property="operateType"/>
+        <result column="METHOD" jdbcType="VARCHAR" property="method"/>
+        <result column="METHOD_CN" jdbcType="VARCHAR" property="methodCn"/>
+        <result column="METHOD_TYPE" jdbcType="VARCHAR" property="methodType"/>
+        <result column="PARAM" jdbcType="VARCHAR" property="param"/>
+        <result column="PARAM_CN" jdbcType="VARCHAR" property="paramCn"/>
+        <result column="STATUS" jdbcType="VARCHAR" property="status"/>
+        <result column="RESULT" jdbcType="VARCHAR" property="result"/>
+        <result column="URI" jdbcType="VARCHAR" property="uri"/>
+        <result column="COST_TIME" jdbcType="NUMERIC" property="costTime"/>
+        <result column="IP" jdbcType="VARCHAR" property="ip"/>
+        <result column="CREATE_DATE" jdbcType="TIMESTAMP" property="createDate"/>
+    </resultMap>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Short">
+    delete from MNG_SYS_LOG
+    where LOG_ID = #{logId,jdbcType=NUMERIC}
+  </delete>
+    <insert id="insert" parameterType="test.model.MngSysLog">
+        <selectKey keyProperty="logId" order="BEFORE" resultType="java.lang.Short">
+            select MNG_SYS_LOG_SEQ.nextval from dual
+        </selectKey>
+        insert into MNG_SYS_LOG (LOG_ID, USER_NAME, OPERATE_TYPE,
+        METHOD, METHOD_CN, METHOD_TYPE,
+        PARAM, PARAM_CN, STATUS,
+        RESULT, URI, COST_TIME,
+        IP, CREATE_DATE)
+        values (#{logId,jdbcType=NUMERIC}, #{userName,jdbcType=VARCHAR}, #{operateType,jdbcType=VARCHAR},
+        #{method,jdbcType=VARCHAR}, #{methodCn,jdbcType=VARCHAR}, #{methodType,jdbcType=VARCHAR},
+        #{param,jdbcType=VARCHAR}, #{paramCn,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR},
+        #{result,jdbcType=VARCHAR}, #{uri,jdbcType=VARCHAR}, #{costTime,jdbcType=NUMERIC},
+        #{ip,jdbcType=VARCHAR}, #{createDate,jdbcType=TIMESTAMP})
+    </insert>
+    <update id="updateByPrimaryKey" parameterType="test.model.MngSysLog">
+    update MNG_SYS_LOG
+    set USER_NAME = #{userName,jdbcType=VARCHAR},
+      OPERATE_TYPE = #{operateType,jdbcType=VARCHAR},
+      METHOD = #{method,jdbcType=VARCHAR},
+      METHOD_CN = #{methodCn,jdbcType=VARCHAR},
+      METHOD_TYPE = #{methodType,jdbcType=VARCHAR},
+      PARAM = #{param,jdbcType=VARCHAR},
+      PARAM_CN = #{paramCn,jdbcType=VARCHAR},
+      STATUS = #{status,jdbcType=VARCHAR},
+      RESULT = #{result,jdbcType=VARCHAR},
+      URI = #{uri,jdbcType=VARCHAR},
+      COST_TIME = #{costTime,jdbcType=NUMERIC},
+      IP = #{ip,jdbcType=VARCHAR},
+      CREATE_DATE = #{createDate,jdbcType=TIMESTAMP}
+    where LOG_ID = #{logId,jdbcType=NUMERIC}
+  </update>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Short" resultMap="BaseResultMap">
+    select LOG_ID, USER_NAME, OPERATE_TYPE, METHOD, METHOD_CN, METHOD_TYPE, PARAM, PARAM_CN, 
+    STATUS, RESULT, URI, COST_TIME, IP, CREATE_DATE
+    from MNG_SYS_LOG
+    where LOG_ID = #{logId,jdbcType=NUMERIC}
+  </select>
+    <select id="selectAll" resultMap="BaseResultMap">
+    select LOG_ID, USER_NAME, OPERATE_TYPE, METHOD, METHOD_CN, METHOD_TYPE, PARAM, PARAM_CN, 
+    STATUS, RESULT, URI, COST_TIME, IP, CREATE_DATE
+    from MNG_SYS_LOG
+  </select>
+    <resultMap id="BaseResultMap" type="test.model.MngSysLog">
+        <id column="LOG_ID" jdbcType="NUMERIC" property="logId"/>
+        <result column="USER_NAME" jdbcType="VARCHAR" property="userName"/>
+        <result column="OPERATE_TYPE" jdbcType="VARCHAR" property="operateType"/>
+        <result column="METHOD" jdbcType="VARCHAR" property="method"/>
+        <result column="METHOD_CN" jdbcType="VARCHAR" property="methodCn"/>
+        <result column="METHOD_TYPE" jdbcType="VARCHAR" property="methodType"/>
+        <result column="PARAM" jdbcType="VARCHAR" property="param"/>
+        <result column="PARAM_CN" jdbcType="VARCHAR" property="paramCn"/>
+        <result column="STATUS" jdbcType="VARCHAR" property="status"/>
+        <result column="RESULT" jdbcType="VARCHAR" property="result"/>
+        <result column="URI" jdbcType="VARCHAR" property="uri"/>
+        <result column="COST_TIME" jdbcType="NUMERIC" property="costTime"/>
+        <result column="IP" jdbcType="VARCHAR" property="ip"/>
+        <result column="CREATE_DATE" jdbcType="TIMESTAMP" property="createDate"/>
+    </resultMap>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Short">
+    delete from MNG_SYS_LOG
+    where LOG_ID = #{logId,jdbcType=NUMERIC}
+  </delete>
+    <insert id="insert" parameterType="test.model.MngSysLog">
+        <selectKey keyProperty="logId" order="BEFORE" resultType="java.lang.Short">
+            select MNG_SYS_LOG_SEQ.nextval from dual
+        </selectKey>
+        insert into MNG_SYS_LOG (LOG_ID, USER_NAME, OPERATE_TYPE,
+        METHOD, METHOD_CN, METHOD_TYPE,
+        PARAM, PARAM_CN, STATUS,
+        RESULT, URI, COST_TIME,
+        IP, CREATE_DATE)
+        values (#{logId,jdbcType=NUMERIC}, #{userName,jdbcType=VARCHAR}, #{operateType,jdbcType=VARCHAR},
+        #{method,jdbcType=VARCHAR}, #{methodCn,jdbcType=VARCHAR}, #{methodType,jdbcType=VARCHAR},
+        #{param,jdbcType=VARCHAR}, #{paramCn,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR},
+        #{result,jdbcType=VARCHAR}, #{uri,jdbcType=VARCHAR}, #{costTime,jdbcType=NUMERIC},
+        #{ip,jdbcType=VARCHAR}, #{createDate,jdbcType=TIMESTAMP})
+    </insert>
+    <update id="updateByPrimaryKey" parameterType="test.model.MngSysLog">
+    update MNG_SYS_LOG
+    set USER_NAME = #{userName,jdbcType=VARCHAR},
+      OPERATE_TYPE = #{operateType,jdbcType=VARCHAR},
+      METHOD = #{method,jdbcType=VARCHAR},
+      METHOD_CN = #{methodCn,jdbcType=VARCHAR},
+      METHOD_TYPE = #{methodType,jdbcType=VARCHAR},
+      PARAM = #{param,jdbcType=VARCHAR},
+      PARAM_CN = #{paramCn,jdbcType=VARCHAR},
+      STATUS = #{status,jdbcType=VARCHAR},
+      RESULT = #{result,jdbcType=VARCHAR},
+      URI = #{uri,jdbcType=VARCHAR},
+      COST_TIME = #{costTime,jdbcType=NUMERIC},
+      IP = #{ip,jdbcType=VARCHAR},
+      CREATE_DATE = #{createDate,jdbcType=TIMESTAMP}
+    where LOG_ID = #{logId,jdbcType=NUMERIC}
+  </update>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Short" resultMap="BaseResultMap">
+    select LOG_ID, USER_NAME, OPERATE_TYPE, METHOD, METHOD_CN, METHOD_TYPE, PARAM, PARAM_CN, 
+    STATUS, RESULT, URI, COST_TIME, IP, CREATE_DATE
+    from MNG_SYS_LOG
+    where LOG_ID = #{logId,jdbcType=NUMERIC}
+  </select>
+    <select id="selectAll" resultMap="BaseResultMap">
+    select LOG_ID, USER_NAME, OPERATE_TYPE, METHOD, METHOD_CN, METHOD_TYPE, PARAM, PARAM_CN, 
+    STATUS, RESULT, URI, COST_TIME, IP, CREATE_DATE
+    from MNG_SYS_LOG
+  </select>
+</mapper>

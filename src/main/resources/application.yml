@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@172.16.11.26:1521/syntong
+    username: JZGLMNG
+    password: JZGLMNG
